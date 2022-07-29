@@ -8,7 +8,7 @@ server-setup:
 	docker exec app composer install && docker exec app php artisan key:generate && docker exec app php artisan config:cache && docker exec app php artisan migrate 
 
 down:
-	cd vue-app && docker-compose down && cd .. && cd laravel-app && docker-compose down
+	cd laravel-app && docker-compose down
 
 serve:
 	xdg-open http://localhost:81
